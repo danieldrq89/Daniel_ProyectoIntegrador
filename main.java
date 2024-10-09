@@ -3,6 +3,63 @@ import java.awt.*;
 
 public class main {
 
+    /**
+     * 
+     */
+    public static void jugar(){
+
+        int jugador = 200;
+        int maquina = 200;
+        int turno = 2;
+        
+
+        Scanner s = new Scanner(System.in);
+
+        
+
+        int opt_player = 0;
+        int opt_maquina = 0;
+
+        while(jugador >= 0 || maquina >= 0){
+            
+        if(turno % 2 == 0){
+            System.out.println("1 ATACAR 2 DEFENDER");
+            opt_player = s.nextInt();
+            
+            if(opt_player == 1 && opt_maquina != 2){
+
+                maquina = maquina - 50;
+                System.out.println("[Jugador]: Daño reflejado [Maquina]Hp:" + maquina);
+                
+            }else {
+                System.out.println("Daño reflejado");
+            }
+
+        }else{
+            
+            opt_maquina = (Math.random() <= 0.5) ? 1 : 2;
+            
+            if(opt_maquina == 1 && opt_player != 2){
+                jugador = jugador - 50;
+                System.out.println("[Maquina]: Daño reflejado [Jugador]Hp:" + jugador);
+            }else{
+                System.out.println("Daño reflejado");
+            }
+
+
+        }
+
+    }
+
+    if(jugador <= 0){
+        System.out.println("[Jugador a perdido]");
+    }else if(){
+        System.out.println("[Maquina a perdido]");
+    }
+    }
+
+
+
     public static void main(String[] args) {
         
         
@@ -28,6 +85,9 @@ public class main {
             
             if(option == 1){
                 System.out.println("Comienza el juego");    
+                jugar();
+                break;
+
             }else if (option == 2) {
                 System.out.println("Juego de multiplataformas con vidas infinitas");
             }else if (option == 3) {
