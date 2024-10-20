@@ -24,28 +24,32 @@ public class main {
             
         if(turno % 2 == 0){
             System.out.println("1 ATACAR 2 DEFENDER");
+            while(true){
             opt_player = s.nextInt();
             
             if(opt_player == 1 && opt_maquina != 2){
 
                 maquina = maquina - 50;
                 System.out.println("[Jugador]: Daño reflejado [Maquina]Hp:" + maquina);
-                
+                break;
             }else {
                 System.out.println("Daño reflejado");
+                break;
             }
-
+        }
         }else{
-            
+            while(true){
             opt_maquina = (Math.random() <= 0.5) ? 1 : 2;
             
             if(opt_maquina == 1 && opt_player != 2){
                 jugador = jugador - 50;
                 System.out.println("[Maquina]: Daño reflejado [Jugador]Hp:" + jugador);
+                break;
             }else{
                 System.out.println("Daño reflejado");
+                break;
             }
-
+        }
 
         }
 
